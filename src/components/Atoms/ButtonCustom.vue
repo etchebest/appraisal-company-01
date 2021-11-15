@@ -1,5 +1,7 @@
 <template>
-  <button class="button-custom">{{ text }}</button>
+  <v-btn color="#4A1E96" light >
+    <span class="button-custom">{{ textBtn }}</span>
+  </v-btn>
 </template>
 
 <script>
@@ -15,5 +17,8 @@ export default {
 
 <style lang="scss" scoped>
 .button-custom {
+  color: #fff;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 </style>

@@ -2,9 +2,10 @@
   <div class="text-center">
     <v-menu offset-y dark open-on-hover rounded="2">
       <template v-slot:activator="{ on, attrs }">
-        <div class="menu-item" v-bind="attrs" v-on="on">
+        <nav class="menu-item" v-bind="attrs" v-on="on">
           {{ data.menu }}
-        </div>
+          <v-icon>{{ data.icon }}</v-icon>
+        </nav>
       </template>
       <div class="submenu-item" v-for="(sub, index) in data.submenu" :key="index">
         <a :href="sub.link">{{ sub.item }}</a>

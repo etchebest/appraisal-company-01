@@ -18,6 +18,7 @@ export default {
         {
           menu: 'Jobs',
           linkmenu: '#',
+          icon: 'mdi-chevron-down',
           submenu: [
             { item: 'Sub menu 1', link: '#' },
             { item: 'Sub Menu 2', link: '#' },
@@ -27,6 +28,7 @@ export default {
         {
           menu: 'Companies',
           linkmenu: '#',
+          icon: 'mdi-chevron-down',
           submenu: [
             { item: 'Sub menu 1', link: '#' },
             { item: 'Sub Menu 2', link: '#' },
