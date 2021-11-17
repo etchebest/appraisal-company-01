@@ -37,6 +37,7 @@ export default {
 <style lang="scss" scoped>
 .serach-custom {
   margin-top: 30px;
+  padding-bottom: 80px;
   .info-site {
     span {
       color: #7752b4;

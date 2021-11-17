@@ -1,5 +1,5 @@
 <template>
-  <v-btn color="#4A1E96" light >
+  <v-btn color="#6B2BD9" light :block="block" >
     <span class="button-custom">{{ textBtn }}</span>
   </v-btn>
 </template>
@@ -11,6 +11,7 @@ export default {
   name: 'logo',
   props: {
     textBtn: Vuetypes.string,
+    block: Vuetypes.bool.def(false),
   },
 };
 </script>
