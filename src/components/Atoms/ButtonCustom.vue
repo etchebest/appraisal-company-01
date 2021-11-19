@@ -1,14 +1,14 @@
 <template>
-  <v-btn color="#6B2BD9" light :block="block" >
+  <v-btn color="#6B2BD9" light :block="block">
     <span class="button-custom">{{ textBtn }}</span>
   </v-btn>
 </template>
 
 <script>
-import Vuetypes from 'vue-types';
+import Vuetypes from "vue-types";
 
 export default {
-  name: 'logo',
+  name: "logo",
   props: {
     textBtn: Vuetypes.string,
     block: Vuetypes.bool.def(false),

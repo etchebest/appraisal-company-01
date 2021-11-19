@@ -7,7 +7,11 @@
           <v-icon>{{ data.icon }}</v-icon>
         </nav>
       </template>
-      <div class="submenu-item" v-for="(sub, index) in data.submenu" :key="index">
+      <div
+        class="submenu-item"
+        v-for="(sub, index) in data.submenu"
+        :key="index"
+      >
         <a :href="sub.link">{{ sub.item }}</a>
       </div>
     </v-menu>
@@ -15,10 +19,10 @@
 </template>
 
 <script>
-import VueTypes from 'vue-types';
+import VueTypes from "vue-types";
 
 export default {
-  name: 'Dropdown',
+  name: "Dropdown",
   props: {
     data: VueTypes.object,
   },

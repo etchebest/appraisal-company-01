@@ -6,13 +6,13 @@
 
 <script>
 export default {
-  name: 'Avatar',
+  name: "Avatar",
   data() {
     return {
       user: {
-        initials: 'JD',
-        fullName: 'John Doe',
-        email: 'john.doe@doe.com',
+        initials: "JD",
+        fullName: "John Doe",
+        email: "john.doe@doe.com",
       },
     };
   },

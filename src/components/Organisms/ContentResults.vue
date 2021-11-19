@@ -2,10 +2,9 @@
   <div class="content-results">
     <v-row>
       <v-col cols="12" sm="8" class="results">
-        <ResultContainer />
-        <ResultContainer />
-        <ResultContainer />
-        <ResultContainer />
+        <div v-for="(item, i) in dataResults" :key="i">
+          <ResultContainer :dataResult="item" />
+        </div>
       </v-col>
       <v-col cols="12" sm="4">
         <div class="newslatter">
@@ -32,20 +31,66 @@
             <ButtonCustom class="mt-4" block :textBtn="'Subscribe'" />
           </div>
         </div>
+        <div class="popular-searches">
+          <h2>Popular Search</h2>
+          <div v-for="(search, i) in searches" :key="i" class="ps-results">
+            <p>{{ search.title }}</p>
+            <p class="tags-color">{{ search.result }} jobs</p>
+          </div>
+        </div>
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
-import ResultContainer from '@/components/Molecules/ResultContainer.vue';
-import ButtonCustom from '../Atoms/ButtonCustom.vue';
+import ResultContainer from "@/components/Molecules/ResultContainer.vue";
+import ButtonCustom from "../Atoms/ButtonCustom.vue";
 
 export default {
-  name: 'ContentResults',
+  name: "ContentResults",
   components: {
     ResultContainer,
     ButtonCustom,
+  },
+  data() {
+    return {
+      searches: [
+        { title: "Product Designer", result: 204 },
+        { title: "Customer Success", result: 80 },
+        { title: "Product Manager", result: 120 },
+      ],
+      dataResults: [
+        {
+          img: "https://bandeira.net/wp-content/uploads/2018/10/bandeira-de-porto-rico-300x200.png",
+          title: "Frontend Developer",
+          country: "Porto Rico only",
+          time: "2 hours",
+          tags: ["Full time", "Software Developer"],
+        },
+        {
+          img: "https://bandeira.net/wp-content/uploads/2018/10/bandeira-de-portugal-300x200.png",
+          title: "Backend Developer",
+          country: "Portugal only",
+          time: "3 hours",
+          tags: ["Full time", "Software Developer"],
+        },
+        {
+          img: "https://bandeira.net/wp-content/uploads/2018/10/bandeira-do-haiti-300x180.png",
+          title: "Frontend Developer",
+          country: "Haiti only",
+          time: "2 hours",
+          tags: ["Full time", "Software Developer"],
+        },
+        {
+          img: "https://bandeira.net/wp-content/uploads/2018/09/bandeira-jamaica-300x179.png",
+          title: "Backend Developer",
+          country: "Jamaica only",
+          time: "3 hours",
+          tags: ["Full time", "Software Developer"],
+        },
+      ],
+    };
   },
 };
 </script>
@@ -57,7 +102,8 @@ export default {
       margin-bottom: 15px;
     }
   }
-  .newslatter {
+  .newslatter,
+  .popular-searches {
     min-width: 300px;
     width: 100%;
     height: auto;
@@ -75,12 +121,35 @@ export default {
     p {
       font-size: 0.9em;
     }
-    .privacy{
+    .privacy {
       font-size: 0.8em;
     }
     .tf-new {
       background-color: #fff;
     }
   }
+  .popular-searches {
+    margin-top: 15px;
+    h2,
+    p {
+      color: rgb(34, 34, 34);
+    }
+    .ps-results {
+      font-size: 0.85em;
+      font-weight: 600;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      p:last-child {
+        color: #bb74f5;
+      }
+    }
+  }
+}
+.tags-color {
+  background-color: #e1d2f0;
+  padding: 1px 8px;
+  border-radius: 8px;
+  
 }
 </style>

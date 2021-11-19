@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import DefaultLayout from '@/layout/DefaultLayout.vue';
-import Header from '@/components/Organisms/Header.vue';
-import SearchCustom from '@/components/Organisms/SearchCustom.vue';
-import ContentResults from '@/components/Organisms/ContentResults.vue';
+import DefaultLayout from "@/layout/DefaultLayout.vue";
+import Header from "@/components/Organisms/Header.vue";
+import SearchCustom from "@/components/Organisms/SearchCustom.vue";
+import ContentResults from "@/components/Organisms/ContentResults.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     DefaultLayout,
     Header,

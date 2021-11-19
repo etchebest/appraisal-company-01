@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import Dropdow from './Dropdow.vue';
+import Dropdow from "./Dropdow.vue";
 
 export default {
-  name: 'Navbar',
+  name: "Navbar",
   components: {
     Dropdow,
   },
@@ -16,40 +16,40 @@ export default {
     return {
       services: [
         {
-          menu: 'Jobs',
-          linkmenu: '#',
-          icon: 'mdi-chevron-down',
+          menu: "Jobs",
+          linkmenu: "#",
+          icon: "mdi-chevron-down",
           submenu: [
-            { item: 'Sub menu 1', link: '#' },
-            { item: 'Sub Menu 2', link: '#' },
-            { item: 'Sub Menu 3', link: '#' },
+            { item: "Sub menu 1", link: "#" },
+            { item: "Sub Menu 2", link: "#" },
+            { item: "Sub Menu 3", link: "#" },
           ],
         },
         {
-          menu: 'Companies',
-          linkmenu: '#',
-          icon: 'mdi-chevron-down',
+          menu: "Companies",
+          linkmenu: "#",
+          icon: "mdi-chevron-down",
           submenu: [
-            { item: 'Sub menu 1', link: '#' },
-            { item: 'Sub Menu 2', link: '#' },
-            { item: 'Sub Menu 3', link: '#' },
+            { item: "Sub menu 1", link: "#" },
+            { item: "Sub Menu 2", link: "#" },
+            { item: "Sub Menu 3", link: "#" },
           ],
         },
         {
-          menu: 'Pricing',
-          linkmenu: '#',
+          menu: "Pricing",
+          linkmenu: "#",
         },
         {
-          menu: 'Advice',
-          linkmenu: '#',
+          menu: "Advice",
+          linkmenu: "#",
         },
         {
-          menu: 'Updates',
-          linkmenu: '#',
+          menu: "Updates",
+          linkmenu: "#",
         },
         {
-          menu: 'Community',
-          linkmenu: '#',
+          menu: "Community",
+          linkmenu: "#",
         },
       ],
     };

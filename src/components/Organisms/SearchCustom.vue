@@ -5,8 +5,8 @@
         <p v-html="fitMsg" />
         <h1 v-html="title" />
         <p>
-          Find your next remote job at compaines like <span>Intercom, Spotify, Square,</span> and
-          <span>Twitter</span>.
+          Find your next remote job at compaines like
+          <span>Intercom, Spotify, Square,</span> and <span>Twitter</span>.
         </p>
       </v-col>
     </v-row>
@@ -19,16 +19,16 @@
 </template>
 
 <script>
-import SearchList from '@/components/Molecules/SearchList.vue';
+import SearchList from "@/components/Molecules/SearchList.vue";
 
 export default {
   components: { SearchList },
-  name: 'SearchCustom',
+  name: "SearchCustom",
   data() {
     return {
-      fitMsg: 'Remote jobs',
-      title: 'Remote jobs',
-      description: '',
+      fitMsg: "Remote jobs",
+      title: "Remote jobs",
+      description: "",
     };
   },
 };

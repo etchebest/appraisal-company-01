@@ -1,28 +1,40 @@
 <template>
   <div class="result-container">
     <div>
-      <v-avatar color="primary" size="40"></v-avatar>
+      <v-avatar color="primary" size="40"
+        ><img :src="dataResult.img" alt="Icone"
+      /></v-avatar>
     </div>
     <div>
-      <h2>Frontend Developer</h2>
+      <h2>{{ dataResult.title }}</h2>
       <p class="subtitle">
         Linear
         <span class="salary">
           <v-icon class="icon">mdi-account-multiple-outline</v-icon> 11-50
           <v-icon class="icon">mdi-currency-usd</v-icon> 100k-140k
         </span>
-        <span class="tags caption">Australia only</span>
+        <span class="tags caption">{{ dataResult.country }}</span>
       </p>
-      <span class="tags caption mr-3 tags-color-1">Full time</span>
-      <span class="tags caption tags-color-2">Software Developer</span>
+      <span
+        v-for="(tag, i) in dataResult.tags"
+        :class="`tags caption mr-3 tags-color-${i + 1}`"
+        :key="i"
+      >
+        {{ tag }}
+      </span>
     </div>
-    <span class="date-register">2 hours ago</span>
+    <span class="date-register">{{ dataResult.time }} ago</span>
   </div>
 </template>
 
 <script>
+import VueTypes from "vue-types";
+
 export default {
-  name: 'ResultsContainer',
+  name: "ResultsContainer",
+  props: {
+    dataResult: VueTypes.object,
+  },
 };
 </script>
 
@@ -69,11 +81,11 @@ export default {
     padding: 3px 8px;
     border-radius: 8px;
     font-weight: 600;
-    background-color: #ECECF2;
+    background-color: #ececf2;
   }
   .tags-color-2 {
     background-color: #d1eaf8;
-    color:rgb(67, 190, 251)
+    color: rgb(67, 190, 251);
   }
   .tags-color-1 {
     background-color: #eddff8;

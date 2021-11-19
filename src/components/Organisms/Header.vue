@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import Logo from '@/components/Atoms/Logo.vue';
-import Navbar from '@/components/Molecules/Navbar.vue';
-import Avatar from '@/components/Molecules/Avatar.vue';
+import Logo from "@/components/Atoms/Logo.vue";
+import Navbar from "@/components/Molecules/Navbar.vue";
+import Avatar from "@/components/Molecules/Avatar.vue";
 
 export default {
-  name: 'Header',
+  name: "Header",
   components: {
     Logo,
     Navbar,
@@ -30,9 +30,9 @@ export default {
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
-  div{
+  div {
     display: flex;
-    div:last-child{
+    div:last-child {
       margin-left: 15px;
     }
   }

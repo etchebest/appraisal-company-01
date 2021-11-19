@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import VueTypes from 'vue-types';
+import VueTypes from "vue-types";
 
 export default {
-  name: 'OptionsDropdown',
+  name: "OptionsDropdown",
   props: {
     dataItems: VueTypes.object,
   },
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn-custom{
+.btn-custom {
   text-transform: none;
 }
 </style>
