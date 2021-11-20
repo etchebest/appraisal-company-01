@@ -2,13 +2,12 @@
   <DefaultLayout>
     <div class="home-site">
       <Header />
-      <SearchCustom :dataSearch="dataResults" />
+      <SearchCustom />
     </div>
   </DefaultLayout>
 </template>
 
 <script>
-import axios from "axios";
 import DefaultLayout from "@/layout/DefaultLayout.vue";
 import Header from "@/components/Organisms/Header.vue";
 import SearchCustom from "@/components/Organisms/SearchCustom.vue";
@@ -24,15 +23,6 @@ export default {
     return {
       dataResults: [],
     };
-  },
-  mounted() {
-    this.getData();
-  },
-  methods: {
-    async getData() {
-      const { data } = await axios.get("http://localhost:3000/jobs");
-      this.dataResults = data;
-    },
   },
 };
 </script>

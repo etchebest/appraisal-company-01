@@ -13,17 +13,18 @@
     <v-row>
       <v-col cols="12">
         <SearchList
-          :dataSearch="dataSearch"
-          @filterSelect="filterSelect = $event"
+          :dataSearch="dataResults"
+          :dataSubSearch="filterSelect"
+          @filterSelect="aplyFilter($event)"
         />
       </v-col>
     </v-row>
-    <ContentResults :dataResults="dataSearch" />
+    <ContentResults :dataResults="filterSelect" />
   </div>
 </template>
 
 <script>
-import VueTypes from "vue-types";
+import axios from "axios";
 import SearchList from "@/components/Molecules/SearchList.vue";
 import ContentResults from "@/components/Organisms/ContentResults.vue";
 
@@ -38,11 +39,30 @@ export default {
       fitMsg: "Remote jobs",
       title: "Remote jobs",
       description: "",
-      filterSelect: {},
+      dataResults: [],
+      filterSelect: [],
     };
   },
-  props: {
-    dataSearch: VueTypes.array,
+  mounted() {
+    this.getData();
+  },
+  methods: {
+    aplyFilter(value) {
+      console.log(value);
+      const listAll = this.dataResults;
+      const filterJob = listAll.filter(
+        (v) =>
+          v.jobTitleText === value.jobTitleText ||
+          v.locationName === value.locationName,
+      );
+      console.log(filterJob.length);
+      this.filterSelect = filterJob;
+    },
+    async getData() {
+      const { data } = await axios.get("http://localhost:3000/jobs");
+      this.dataResults = data;
+      this.filterSelect = data;
+    },
   },
 };
 </script>

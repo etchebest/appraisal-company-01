@@ -4,7 +4,7 @@
       <v-col cols="12" sm="5">
         <v-autocomplete
           :items="jobsList"
-          v-model="filterSelect.job"
+          v-model="filterSelect.jobTitleText"
           auto-select-first
           clearable
           dense
@@ -16,7 +16,7 @@
       <v-col cols="12" sm="5">
         <v-autocomplete
           :items="coutryList"
-          v-model="filterSelect.country"
+          v-model="filterSelect.locationName"
           auto-select-first
           clearable
           dense
@@ -26,7 +26,7 @@
         />
       </v-col>
       <v-col cols="12" sm="2" class="btn-action">
-        <ButtonCustom :textBtn="'Search'" @click="getFilters" />
+        <ButtonCustom :textBtn="'Search'" @click="getFilters(filterSelect)" />
       </v-col>
     </v-row>
     <v-row>
@@ -58,26 +58,20 @@ export default {
   },
   data() {
     return {
-      detailSelect: [],
       jobsList: [],
       coutryList: [],
       companyName: [],
       annualWage: [],
-      typeWork: [
-        "Full time",
-        "Contractor",
-        "Temporary",
-        "Items",
-        "Volumetric",
-        "Other",
-      ],
+      typeWork: [],
       dataFilter: null,
+      dataSubfilter: [],
       items: [],
       filterSelect: {},
     };
   },
   props: {
     dataSearch: VueTypes.array,
+    dataSubSearch: VueTypes.array,
   },
   watch: {
     dataSearch: {
@@ -89,6 +83,15 @@ export default {
         }
       },
     },
+    dataSubSearch: {
+      handler() {
+        if (this.dataSubSearch) {
+          this.dataSubfilter = this.dataSubSearch;
+          this.getOptions();
+        }
+      },
+      deep: true,
+    },
   },
   methods: {
     getOptions() {
@@ -98,26 +101,26 @@ export default {
         {
           label: "Company",
           ico: "mdi-chevron-down",
-          title: this.dataFilter.map((v) => v.companyName).sort(),
+          title: this.dataSubfilter.map((v) => v.companyName).sort(),
           value: null,
         },
         {
           label: "Salary",
           ico: "mdi-chevron-down",
-          title: this.dataFilter.map((v) => v.annualWage).sort(),
+          title: this.dataSubfilter.map((v) => v.annualWage).sort(),
           value: null,
         },
         {
           label: "Type of work",
           ico: "mdi-chevron-down",
-          title: this.typeWork,
+          title: this.dataSubfilter.map((v) => v.typeWork).sort(),
           value: null,
         },
       ];
       this.items = values;
     },
-    getFilters() {
-      this.$emit("filterSelect", this.filterSelect);
+    getFilters(value) {
+      this.$emit("filterSelect", value);
     },
   },
 };

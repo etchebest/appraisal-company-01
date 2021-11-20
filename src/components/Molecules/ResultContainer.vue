@@ -2,18 +2,18 @@
   <div class="result-container">
     <div>
       <v-avatar color="primary" size="40"
-        ><img :src="results.companyLogoUrl" alt="Icone"
+        ><img :src="dataResult.companyLogoUrl" alt="Icone"
       /></v-avatar>
     </div>
     <div>
-      <h2>{{ results.jobTitleText }}</h2>
+      <h2>{{ dataResult.jobTitleText }}</h2>
       <p class="subtitle">
         Linear
         <span class="salary">
           <v-icon class="icon">mdi-account-multiple-outline</v-icon> 11-50
           <v-icon class="icon">mdi-currency-usd</v-icon> 100k-140k
         </span>
-        <span class="tags caption">{{ results.locationName }}</span>
+        <span class="tags caption">{{ dataResult.locationName }}</span>
       </p>
       <span
         v-for="(tag, i) in results.tags"
@@ -46,7 +46,6 @@ export default {
   methods: {
     mountObject() {
       const values = {
-        ...this.dataResult,
         time: "2 hours",
         tags: ["Full time", "Software Developer"],
       };
