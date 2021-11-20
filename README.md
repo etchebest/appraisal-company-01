@@ -1,24 +1,26 @@
-# app2
+# Remote jobs system
 
 ## Project setup
+install all system dependencies with command
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
+npm install
 ```
 
-### Compiles and minifies for production
+### Load the backend system
+Activate the backend
 ```
-yarn build
+npm run backend
 ```
 
-### Lints and fixes files
+### Load the frontend system
+Activate the frontend
 ```
-yarn lint
+npm run serve
 ```
+
+
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+For more configuration reference access the VueJS documentation: https://cli.vuejs.org/config/
+
+![alt text](https://miro.medium.com/max/800/1*Pk2mZo1cBqfVqQi-mtAkuA.png)
