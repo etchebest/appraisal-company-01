@@ -2,28 +2,28 @@
   <div class="result-container">
     <div>
       <v-avatar color="primary" size="40"
-        ><img :src="dataResult.img" alt="Icone"
+        ><img :src="results.companyLogoUrl" alt="Icone"
       /></v-avatar>
     </div>
     <div>
-      <h2>{{ dataResult.title }}</h2>
+      <h2>{{ results.jobTitleText }}</h2>
       <p class="subtitle">
         Linear
         <span class="salary">
           <v-icon class="icon">mdi-account-multiple-outline</v-icon> 11-50
           <v-icon class="icon">mdi-currency-usd</v-icon> 100k-140k
         </span>
-        <span class="tags caption">{{ dataResult.country }}</span>
+        <span class="tags caption">{{ results.locationName }}</span>
       </p>
       <span
-        v-for="(tag, i) in dataResult.tags"
+        v-for="(tag, i) in results.tags"
         :class="`tags caption mr-3 tags-color-${i + 1}`"
         :key="i"
       >
         {{ tag }}
       </span>
     </div>
-    <span class="date-register">{{ dataResult.time }} ago</span>
+    <span class="date-register">{{ results.time }} ago</span>
   </div>
 </template>
 
@@ -32,14 +32,33 @@ import VueTypes from "vue-types";
 
 export default {
   name: "ResultsContainer",
+  data() {
+    return {
+      results: {},
+    };
+  },
   props: {
     dataResult: VueTypes.object,
+  },
+  mounted() {
+    this.mountObject();
+  },
+  methods: {
+    mountObject() {
+      const values = {
+        ...this.dataResult,
+        time: "2 hours",
+        tags: ["Full time", "Software Developer"],
+      };
+      this.results = values;
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .result-container {
+  background-color: #fff;
   min-width: 50px;
   position: relative;
   display: flex;

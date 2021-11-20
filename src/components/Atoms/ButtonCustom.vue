@@ -1,5 +1,5 @@
 <template>
-  <v-btn color="#6B2BD9" light :block="block">
+  <v-btn color="#6B2BD9" light :block="block" @click.prevent="click()">
     <span class="button-custom">{{ textBtn }}</span>
   </v-btn>
 </template>
@@ -12,6 +12,11 @@ export default {
   props: {
     textBtn: Vuetypes.string,
     block: Vuetypes.bool.def(false),
+  },
+  methods: {
+    click() {
+      this.$emit("click");
+    },
   },
 };
 </script>

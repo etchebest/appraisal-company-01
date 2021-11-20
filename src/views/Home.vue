@@ -2,17 +2,16 @@
   <DefaultLayout>
     <div class="home-site">
       <Header />
-      <SearchCustom />
-      <ContentResults />
+      <SearchCustom :dataSearch="dataResults" />
     </div>
   </DefaultLayout>
 </template>
 
 <script>
+import axios from "axios";
 import DefaultLayout from "@/layout/DefaultLayout.vue";
 import Header from "@/components/Organisms/Header.vue";
 import SearchCustom from "@/components/Organisms/SearchCustom.vue";
-import ContentResults from "@/components/Organisms/ContentResults.vue";
 
 export default {
   name: "Home",
@@ -20,7 +19,20 @@ export default {
     DefaultLayout,
     Header,
     SearchCustom,
-    ContentResults,
+  },
+  data() {
+    return {
+      dataResults: [],
+    };
+  },
+  mounted() {
+    this.getData();
+  },
+  methods: {
+    async getData() {
+      const { data } = await axios.get("http://localhost:3000/jobs");
+      this.dataResults = data;
+    },
   },
 };
 </script>

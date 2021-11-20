@@ -12,24 +12,37 @@
     </v-row>
     <v-row>
       <v-col cols="12">
-        <SearchList />
+        <SearchList
+          :dataSearch="dataSearch"
+          @filterSelect="filterSelect = $event"
+        />
       </v-col>
     </v-row>
+    <ContentResults :dataResults="dataSearch" />
   </div>
 </template>
 
 <script>
+import VueTypes from "vue-types";
 import SearchList from "@/components/Molecules/SearchList.vue";
+import ContentResults from "@/components/Organisms/ContentResults.vue";
 
 export default {
-  components: { SearchList },
   name: "SearchCustom",
+  components: {
+    SearchList,
+    ContentResults,
+  },
   data() {
     return {
       fitMsg: "Remote jobs",
       title: "Remote jobs",
       description: "",
+      filterSelect: {},
     };
+  },
+  props: {
+    dataSearch: VueTypes.array,
   },
 };
 </script>

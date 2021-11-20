@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import VueTypes from "vue-types";
 import ResultContainer from "@/components/Molecules/ResultContainer.vue";
 import ButtonCustom from "../Atoms/ButtonCustom.vue";
 
@@ -60,37 +61,10 @@ export default {
         { title: "Customer Success", result: 80 },
         { title: "Product Manager", result: 120 },
       ],
-      dataResults: [
-        {
-          img: "https://bandeira.net/wp-content/uploads/2018/10/bandeira-de-porto-rico-300x200.png",
-          title: "Frontend Developer",
-          country: "Porto Rico only",
-          time: "2 hours",
-          tags: ["Full time", "Software Developer"],
-        },
-        {
-          img: "https://bandeira.net/wp-content/uploads/2018/10/bandeira-de-portugal-300x200.png",
-          title: "Backend Developer",
-          country: "Portugal only",
-          time: "3 hours",
-          tags: ["Full time", "Software Developer"],
-        },
-        {
-          img: "https://bandeira.net/wp-content/uploads/2018/10/bandeira-do-haiti-300x180.png",
-          title: "Frontend Developer",
-          country: "Haiti only",
-          time: "2 hours",
-          tags: ["Full time", "Software Developer"],
-        },
-        {
-          img: "https://bandeira.net/wp-content/uploads/2018/09/bandeira-jamaica-300x179.png",
-          title: "Backend Developer",
-          country: "Jamaica only",
-          time: "3 hours",
-          tags: ["Full time", "Software Developer"],
-        },
-      ],
     };
+  },
+  props: {
+    dataResults: VueTypes.array,
   },
 };
 </script>
@@ -150,6 +124,5 @@ export default {
   background-color: #e1d2f0;
   padding: 1px 8px;
   border-radius: 8px;
-  
 }
 </style>

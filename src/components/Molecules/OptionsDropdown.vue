@@ -8,8 +8,8 @@
         </v-btn>
       </template>
       <v-list>
-        <v-list-item v-for="(item, index) in dataItems" :key="index">
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        <v-list-item v-for="(item, index) in dataItems.title" :key="index">
+          <v-list-item-title>{{ item }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>
