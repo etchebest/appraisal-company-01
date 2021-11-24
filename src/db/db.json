@@ -9,7 +9,7 @@
       "rating": 4.1,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Full time"
+      "typeWork": ["Full time", "Software Developer"]
     },
     {
       "jobTitleText": "Back End Software Engineer",
@@ -20,7 +20,7 @@
       "rating": 3.4,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Full time"
+      "typeWork": ["halfway", "Software Developer"]
     },
     {
       "jobTitleText": "Software Engineer - Python/AWS",
@@ -31,7 +31,7 @@
       "rating": 3.6,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Contractor"
+      "typeWork": ["Contract", "Software Developer"]
     },
     {
       "jobTitleText": "Back End Software Engineer",
@@ -42,7 +42,7 @@
       "rating": 4.4,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Temporay"
+      "typeWork": ["Temporary"]
     },
     {
       "jobTitleText": "Software Engineer, Data Warehouse",
@@ -53,7 +53,7 @@
       "rating": 4.2,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Full time"
+      "typeWork": ["halfway", "Backend Developer"]
     },
     {
       "jobTitleText": "Software Engineer (SRE)",
@@ -64,7 +64,7 @@
       "rating": 4.8,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Temporary"
+      "typeWork": ["Temporary"]
     },
     {
       "jobTitleText": "Software Engineer II",
@@ -75,7 +75,7 @@
       "rating": 3.4,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Full time"
+      "typeWork": ["Contract", "Frontend Developer"]
     },
     {
       "jobTitleText": "Software Engineer",
@@ -86,7 +86,7 @@
       "rating": 4.2,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Temporary"
+      "typeWork": ["Temporary", "Frontend Developer"]
     },
     {
       "jobTitleText": "Senior Software Engineer, Gameplay",
@@ -97,7 +97,7 @@
       "rating": 3.4,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Volumetric"
+      "typeWork": ["Volumetric", "Frontend Developer"]
     },
     {
       "jobTitleText": "Senior Application Software Engineer (Test Automation)",
@@ -108,7 +108,7 @@
       "rating": 0,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Full time"
+      "typeWork": ["halfway", "Software Developer"]
     },
     {
       "jobTitleText": "Software Engineering",
@@ -119,7 +119,7 @@
       "rating": 3.7,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Volumetric"
+      "typeWork": ["Volumetric"]
     },
     {
       "jobTitleText": "Software Engineer",
@@ -130,7 +130,7 @@
       "rating": 4,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Volumetric"
+      "typeWork": ["Temporary", "Frontend Developer"]
     },
     {
       "jobTitleText": "Ground Software — Associate Engineer (Summer 2022)",
@@ -141,7 +141,7 @@
       "rating": 5,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Other"
+      "typeWork": ["Other"]
     },
     {
       "jobTitleText": "Junior Software Engineer, DevOps",
@@ -152,7 +152,7 @@
       "rating": 4.5,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Other"
+      "typeWork": ["Other", "Software Developer"]
     },
     {
       "jobTitleText": "Software Developer",
@@ -163,7 +163,7 @@
       "rating": 3.4,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Full time"
+      "typeWork": ["Temporary", "Software Developer"]
     },
     {
       "jobTitleText": "Associate Software Engineer",
@@ -174,7 +174,7 @@
       "rating": 3.7,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Full time"
+      "typeWork": ["Temporary", "Frontend Developer"]
     },
     {
       "jobTitleText": "Software Engineer",
@@ -185,7 +185,7 @@
       "rating": 3.5,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Items"
+      "typeWork": ["Items"]
     },
     {
       "jobTitleText": "Software Development Engineer",
@@ -196,7 +196,7 @@
       "rating": 4.3,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Other"
+      "typeWork": ["Other"]
     },
     {
       "jobTitleText": "Application Support Developer (Remote / Nationwide)",
@@ -207,7 +207,7 @@
       "rating": 3.7,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Items"
+      "typeWork": ["Other", "Software Developer"]
     },
     {
       "jobTitleText": "Engineer, Software",
@@ -218,7 +218,7 @@
       "rating": 4,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Other"
+      "typeWork":  ["Other"]
     },
     {
       "jobTitleText": "Entry Level C++ Software Developer",
@@ -229,7 +229,7 @@
       "rating": 4.7,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Contractor"
+      "typeWork": ["Contract", "Software Developer"]
     },
     {
       "jobTitleText": "Junior Software Engineer",
@@ -240,7 +240,7 @@
       "rating": 4.1,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Full time"
+      "typeWork": ["Full time", "Software Developer"]
     },
     {
       "jobTitleText": "Software Engineer",
@@ -251,7 +251,7 @@
       "rating": 4,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Contractor"
+      "typeWork": ["Temporary", "Frontend Developer"]
     },
     {
       "jobTitleText": "Software Development Engineer II",
@@ -262,7 +262,7 @@
       "rating": 4.2,
       "payPeriod": "ANNUAL",
       "payCurrency": "USD",
-      "typeWork": "Other"
+      "typeWork": ["Items", "Database Developer"]
     }
   ]
 }

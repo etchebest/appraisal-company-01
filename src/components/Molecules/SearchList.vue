@@ -2,31 +2,19 @@
   <div class="search-list">
     <v-row>
       <v-col cols="12" sm="5">
-        <v-autocomplete
-          :items="jobsList"
-          v-model="filterSelect.jobTitleText"
-          auto-select-first
-          clearable
-          dense
-          solo
-          label="Job title or keyword"
-          prepend-inner-icon="mdi-magnify"
+        <TextField
+          :dataText="dataText[0]"
+          @responseText="filterSelect.jobTitleText = $event"
         />
       </v-col>
       <v-col cols="12" sm="5">
-        <v-autocomplete
-          :items="coutryList"
-          v-model="filterSelect.locationName"
-          auto-select-first
-          clearable
-          dense
-          solo
-          label="Country or timezone"
-          prepend-inner-icon="mdi-magnify"
+        <TextField
+          :dataText="dataText[1]"
+          @responseText="filterSelect.locationName = $event"
         />
       </v-col>
       <v-col cols="12" sm="2" class="btn-action">
-        <ButtonCustom :textBtn="'Search'" @click="getFilters(filterSelect)" />
+        <ButtonCustom :textBtn="textBtn" @click="getFilters(filterSelect)" />
       </v-col>
     </v-row>
     <v-row>
@@ -34,11 +22,14 @@
         cols="12"
         sm="4"
         class="filters-bottom"
-        v-for="item in items"
+        v-for="(item, i) in items"
         :key="item.text"
       >
         <div class="menu-datalhe">
-          <Autocomplete :dataFilter="item" @selected="item.value = $event" />
+          <Autocomplete
+            :dataFilter="item"
+            @responseSelected="items[i].value = $event"
+          />
         </div>
       </v-col>
     </v-row>
@@ -49,12 +40,14 @@
 import VueTypes from "vue-types";
 import ButtonCustom from "@/components/Atoms/ButtonCustom.vue";
 import Autocomplete from "./Autocomplete.vue";
+import TextField from "./TextField.vue";
 
 export default {
   name: "SearchList",
   components: {
     ButtonCustom,
     Autocomplete,
+    TextField,
   },
   data() {
     return {
@@ -67,6 +60,11 @@ export default {
       dataSubfilter: [],
       items: [],
       filterSelect: {},
+      textBtn: "Search",
+      dataText: [
+        { label: "Job title or keyword", icon: "mdi-magnify" },
+        { label: "Country or timezone", icon: "mdi-magnify" },
+      ],
     };
   },
   props: {
@@ -92,11 +90,27 @@ export default {
       },
       deep: true,
     },
+    items: {
+      handler: "getSubFilter",
+      deep: true,
+    },
   },
   methods: {
+    unique(value, index, self) { 
+      return self.indexOf(value) === index;
+    },
     getOptions() {
       this.jobsList = this.dataFilter.map((v) => v.jobTitleText).sort();
       this.coutryList = this.dataFilter.map((v) => v.locationName).sort();
+      const tWork = this.dataSubfilter.map((v) => v.typeWork);
+      const works = [];
+      for (let i = 0; i < tWork.length; i++) {
+        for (let x = 0; x < tWork[i].length; x++) {         
+          if(works.indexOf(tWork[i][x]) === -1){
+            works.push(tWork[i][x])
+          }         
+        }        
+      }
       const values = [
         {
           label: "Company",
@@ -113,14 +127,22 @@ export default {
         {
           label: "Type of work",
           ico: "mdi-chevron-down",
-          title: this.dataSubfilter.map((v) => v.typeWork).sort(),
+          title: works.sort(),
           value: null,
         },
       ];
       this.items = values;
     },
     getFilters(value) {
-      this.$emit("filterSelect", value);
+      this.$emit("responseSelect", value);
+    },
+    getSubFilter() {
+      const data = {
+        companyName: this.items[0].value,
+        annualWage: this.items[1].value,
+        typeWork: this.items[2].value,
+      };
+      this.$emit("responseSubFilter", data);
     },
   },
 };

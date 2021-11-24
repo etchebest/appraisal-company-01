@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <v-autocomplete
-      :items="dataFilter.title"
-      @change="getSelect()"
-      v-model="selected"
-      auto-select-first
-      clearable
-      dense
-      solo
-      :label="dataFilter.label"
-      :prepend-inner-icon="dataFilter.ico"
-    ></v-autocomplete>
-  </div>
+  <v-autocomplete
+    :items="dataFilter.title"
+    @change="getSelect()"
+    v-model="selected"
+    auto-select-first
+    clearable
+    dense
+    solo
+    :label="dataFilter.label"
+    :prepend-inner-icon="dataFilter.ico"
+  />
 </template>
 
 <script>
@@ -27,7 +25,7 @@ export default {
   },
   methods: {
     getSelect() {
-      this.$emit("selected", this.selected);
+      this.$emit("responseSelected", this.selected);
     },
   },
   props: {

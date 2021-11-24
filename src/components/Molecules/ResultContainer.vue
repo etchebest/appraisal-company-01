@@ -11,19 +11,22 @@
         Linear
         <span class="salary">
           <v-icon class="icon">mdi-account-multiple-outline</v-icon> 11-50
-          <v-icon class="icon">mdi-currency-usd</v-icon> 100k-140k
+          <v-icon class="icon">mdi-currency-usd</v-icon>
+          {{
+            dataResult.annualWage.toLocaleString('USD')
+          }}
         </span>
         <span class="tags caption">{{ dataResult.locationName }}</span>
       </p>
       <span
-        v-for="(tag, i) in results.tags"
+        v-for="(tag, i) in dataResult.typeWork"
         :class="`tags caption mr-3 tags-color-${i + 1}`"
         :key="i"
       >
         {{ tag }}
       </span>
     </div>
-    <span class="date-register">{{ results.time }} ago</span>
+    <span class="date-register"> 2 hours ago</span>
   </div>
 </template>
 
@@ -32,25 +35,8 @@ import VueTypes from "vue-types";
 
 export default {
   name: "ResultsContainer",
-  data() {
-    return {
-      results: {},
-    };
-  },
   props: {
     dataResult: VueTypes.object,
-  },
-  mounted() {
-    this.mountObject();
-  },
-  methods: {
-    mountObject() {
-      const values = {
-        time: "2 hours",
-        tags: ["Full time", "Software Developer"],
-      };
-      this.results = values;
-    },
   },
 };
 </script>

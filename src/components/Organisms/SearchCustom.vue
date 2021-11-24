@@ -15,7 +15,8 @@
         <SearchList
           :dataSearch="dataResults"
           :dataSubSearch="filterSelect"
-          @filterSelect="aplyFilter($event)"
+          @responseSelect="aplyFilter($event)"
+          @responseSubFilter="aplySubFilter($event)"
         />
       </v-col>
     </v-row>
@@ -48,15 +49,23 @@ export default {
   },
   methods: {
     aplyFilter(value) {
-      console.log(value);
       const listAll = this.dataResults;
       const filterJob = listAll.filter(
-        (v) =>
-          v.jobTitleText === value.jobTitleText ||
-          v.locationName === value.locationName,
+        (job) =>
+          job.jobTitleText.indexOf(value.jobTitleText) !== -1 ||
+          job.locationName.indexOf(value.locationName) !== -1,
       );
-      console.log(filterJob.length);
-      this.filterSelect = filterJob;
+      this.filterSelect = filterJob.length > 0 ? filterJob : listAll;
+    },
+    aplySubFilter(value) {
+      const preFilter = this.filterSelect;
+      const subFilter = preFilter.filter(
+        (sub) =>
+          sub.companyName === value.companyName ||
+          sub.annualWage === value.annualWage ||
+          sub.typeWork.indexOf(value.typeWork) !== -1,
+      );
+      this.filterSelect = subFilter.length > 0 ? subFilter : preFilter;
     },
     async getData() {
       const { data } = await axios.get("http://localhost:3000/jobs");
